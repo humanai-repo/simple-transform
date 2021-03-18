@@ -23,6 +23,9 @@ class WordCountTransformer:
 	def transform(self, columns):
 		self.wordCount += sum([len(c.split()) for c in columns])
 
+	def getColumns(self):
+		return ['words']
+
 	def getTransform(self):
 		return [self.wordCount]
 
@@ -48,7 +51,7 @@ def main():
 
 	# Output
 	outputFile = csv.writer(open(parsed.output,'w'))
-	outputFile.writerow(columns+["index"])
+	outputFile.writerow(transform.getColumns()+["index"])
 	outputFile.writerow(transform.getTransform()+[index])
 
 if __name__ == "__main__":
