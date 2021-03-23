@@ -1,5 +1,9 @@
 # Simple Transform
-Apply a specified transform to given rows in a CSV file
+Apply a specified transform to a CSV file.
+
+Takes a multi-row CSV file as input and returns a single row CSV file as output.
+
+Currently word count is the only transform supported.
 
 ## Example Usage
 
@@ -34,9 +38,7 @@ directory containing input data mounted in the container.
 docker run -it -v $ABSOLUTE_PATH_INPUT_DIR:$CONTAINER_INPUT --name simple-transform simple-transform
 ```
 
-Then run the commands as above.
-
-# Build
+## Build
 To build a local python package (tested on Mac OS 10.2).
 
 ```bash
@@ -68,7 +70,7 @@ docker login --username=$DOCKERHUB_USERNAME
 docker push $DOCKERHUB_USERNAME/simple-transform
 ```
 
-# Install
+## Install
 Install from a local tar file.
 
 ```bash
